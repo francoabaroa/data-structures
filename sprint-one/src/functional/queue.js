@@ -13,7 +13,11 @@ var Queue = function() {
   someInstance.dequeue = function() {
     if ( counter > 0) {
       counter--;
-      var dequeued = storage[counter];
+      for ( var key in storage ) {
+        var dequeued = storage[key];
+        break;
+        
+      }
     }
     return dequeued;
   };
