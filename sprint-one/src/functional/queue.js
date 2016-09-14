@@ -7,13 +7,15 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    counter++;
+    storage[counter++] = value;
   };
 
   someInstance.dequeue = function() {
     if ( counter > 0) {
       counter--;
+      var dequeued = storage[counter];
     }
+    return dequeued;
   };
       
 
