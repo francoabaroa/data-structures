@@ -21,6 +21,6 @@ var Stack = function() {
   someInstance.size = function() {
     return counter;
   };
-  console.log(storage);
+  //console.log(storage);
   return someInstance;
 };
