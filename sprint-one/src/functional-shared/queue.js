@@ -9,11 +9,10 @@ var Queue = function() {
 
 var queueMethods = {};
 
-// queueMethods.enqueue = function (value) {
-//   console.log(queue);
-//   this.storage[this.counter] = value;
-//   this.counter++;
-// };
+queueMethods.enqueue = function (value) {
+  // this.queue[this.counter] = value;
+  this.counter++;
+};
 
 // queueMethods.dequeue = function () {
 //   this.counter--;
