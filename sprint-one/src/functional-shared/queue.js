@@ -14,14 +14,14 @@ queueMethods.enqueue = function (value) {
   this.counter++;
 };
 
-// queueMethods.dequeue = function () {
-//   this.counter--;
-//   if (this.counter > 0) {
-//     var dequeued = this.storage[0];
-//     this.storage[0] = this.storage[counter];
-//   }
-//   return dequeued;
-// };
+queueMethods.dequeue = function () {
+  this.counter--;
+  if (this.counter > 0) {
+    var dequeued = this.storage[0];
+    this.storage[0] = this.storage[counter];
+  }
+  return dequeued;
+};
 
 queueMethods.size = function () {
   return this.counter;
