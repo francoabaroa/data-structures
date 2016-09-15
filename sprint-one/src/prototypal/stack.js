@@ -6,7 +6,7 @@ var Stack = function() {
   return stack;
 };
 
-var stackMethods = Object.create(Stack.prototype);
+var stackMethods = {};
 
 
 Stack.prototype.size = function () {
@@ -19,8 +19,9 @@ Stack.prototype.push = function (value) {
 
 Stack.prototype.pop = function () {
   if (this.counter > 0) {
-    var temp = this[this.counter];
     this.counter--;
+    var temp = this[this.counter];
   }
   return temp;
 };
+
