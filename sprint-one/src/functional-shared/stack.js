@@ -18,3 +18,11 @@ stackMethods.size = function () {
 stackMethods.push = function (value) {
   this[this.counter++] = value;
 };
+
+stackMethods.pop = function () {
+  if ( this.counter > 0) {
+    this.counter--;
+    var popped = this[counter];
+  }
+  return popped;
+};
