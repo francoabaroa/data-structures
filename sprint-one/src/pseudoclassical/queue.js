@@ -14,7 +14,10 @@ Queue.prototype.enqueue = function (value) {
 
 Queue.prototype.dequeue = function () {
   if (this.counter > 0) {
+    var temp = this[0];
     this.counter--;
+    this[0] = this[this.counter];
   }
+  return temp;
 };
 
