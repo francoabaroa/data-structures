@@ -22,7 +22,7 @@ stackMethods.push = function (value) {
 stackMethods.pop = function () {
   if ( this.counter > 0) {
     this.counter--;
-    var popped = this[counter];
+    var popped = this[this.counter];
   }
   return popped;
 };
