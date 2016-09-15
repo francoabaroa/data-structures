@@ -11,3 +11,9 @@ Stack.prototype.size = function () {
 Stack.prototype.push = function (value) {
   this[this.counter++] = value;
 };
+
+Stack.prototype.pop = function () {
+  if ( this.counter > 0) {
+    this.counter--;
+  }
+};
