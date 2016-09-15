@@ -12,3 +12,7 @@ Queue.prototype.enqueue = function (value) {
   this[this.counter++] = value;
 };
 
+Queue.prototype.dequeue = function () {
+  this.counter--;
+};
+
