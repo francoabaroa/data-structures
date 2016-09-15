@@ -15,5 +15,7 @@ Stack.prototype.push = function (value) {
 Stack.prototype.pop = function () {
   if ( this.counter > 0) {
     this.counter--;
+    var popped = this[this.counter];
   }
+  return popped;
 };
