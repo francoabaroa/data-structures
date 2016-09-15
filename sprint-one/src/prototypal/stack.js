@@ -13,4 +13,6 @@ Stack.prototype.size = function () {
   return this.counter;
 };
 
-console.log(stackMethods.size);
+Stack.prototype.push = function (value) {
+  this[this.counter++] = value;
+};
