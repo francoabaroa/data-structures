@@ -16,8 +16,8 @@ queueMethods.enqueue = function (value) {
 queueMethods.dequeue = function () {
   if (this.counter > 0) {
     this.counter--;
-    var dequeued = this.storage[0];
-    this.storage[0] = this.storage[this.counter];
+    var dequeued = this[0];
+    this[0] = this[this.counter];
   }
   return dequeued;
 };
