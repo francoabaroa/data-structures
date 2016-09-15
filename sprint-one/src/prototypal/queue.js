@@ -12,3 +12,7 @@ var queueMethods = {};
 Queue.prototype.size = function () {
   return this.counter;
 };
+
+Queue.prototype.enqueue = function (value) {
+  this[this.counter++] = value;
+};
