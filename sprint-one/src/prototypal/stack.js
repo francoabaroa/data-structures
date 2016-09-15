@@ -3,11 +3,14 @@ var Stack = function() {
   // but try not not reference your old code in writing the new style.
   var stack = Object.create(Stack.prototype);
   stack.counter = 0;
+  console.log(stack instanceof Stack);
   return stack;
 };
 
-var stackMethods = {};
+var stackMethods = Object.create(Stack);
 
+// Stack.prototype.constructor = Stack.prototype;
+console.log(stackMethods.prototype.constructor);
 
 Stack.prototype.size = function () {
   return this.counter;
