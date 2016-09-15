@@ -4,16 +4,13 @@ var Queue = function() {
   var queue = {};
   queue.counter = 0;
   _.extend(queue, queueMethods);
-  console.log(queue);
   return queue;
 };
 
 var queueMethods = {};
 
 queueMethods.enqueue = function (value) {
-  this.counter++;
-  console.log(this.queue);
-  this.queue[this.counter] = value;
+  this[this.counter++] = value;
 };
 
 queueMethods.dequeue = function () {
