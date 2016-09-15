@@ -7,3 +7,7 @@ var Stack = function() {
 Stack.prototype.size = function () {
   return this.counter;
 };
+
+Stack.prototype.push = function (value) {
+  this[this.counter++] = value;
+};
