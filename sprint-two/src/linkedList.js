@@ -14,11 +14,22 @@ var LinkedList = function() {
 
   list.addToTail = function(value) {
     if (list.head === null) {
-      list.tail = Node(value);
+      list.head = list.tail = Node(value);
     }
+    while (list.head.next) {
+      list.head = list.head.next;
+    }
+    list.head.next = list.tail = Node(value);
   };
 
   list.removeHead = function() {
+    if (list.head.next !== null) {  
+      var newHead = list.head.next;
+      delete list.head.value;
+      list.head = newHead;
+    }
+    list.head.next = list.tail;
+    return newHead;   
   };
 
   list.contains = function(target) {
