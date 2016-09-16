@@ -12,7 +12,6 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  // this.children = value;
   var parent = this;
   var tree = Tree(value);
 
@@ -20,18 +19,10 @@ treeMethods.addChild = function(value) {
     this.children[0] = tree;
   }
   this.children[0].value = value;
-  console.log(this);
-  // if (this.children.length === 0) {
-  //   parent = tree;
-  //   this.value = value;
-  //   // this.children.push(value);
-  //   console.log(this);
-  // }
-
-  // console.log(this.children);
 };
 
 treeMethods.contains = function(target) {
+  return false;
 };
 
 
