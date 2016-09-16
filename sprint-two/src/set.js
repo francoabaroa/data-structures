@@ -20,6 +20,7 @@ setPrototype.contains = function(item) {
 };
 
 setPrototype.remove = function(item) {
+  this._storage[item] = undefined;
 };
 
 /*
