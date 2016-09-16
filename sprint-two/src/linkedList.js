@@ -29,7 +29,7 @@ var LinkedList = function() {
       list.head = newHead;
     }
     list.head.next = list.tail;
-    return newHead;   
+    return newHead.value; 
   };
 
   list.contains = function(target) {
