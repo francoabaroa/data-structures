@@ -25,21 +25,24 @@ var LinkedList = function() {
   list.removeHead = function() {
     if (list.head.next !== null) {  
       var newHead = list.head.next;
-      // delete list.head;
       list.head = newHead;
     }
-    // list.head.next = list.tail;
     return newHead.value; 
   };
 
   list.contains = function(target) {
-    for (var key in list.head) {
-      console.log(list.head[key]);
-      if (list.head[key] === target) {
+    var current = list.head.next;
+
+    if (list.head.value === target) {
+      return true;
+    } 
+    while (current !== null) {
+      if (current.value === target) {
         return true;
-      } 
-      return false;
+      }
+      current = current.next;
     }
+    return false;
   };
 
   return list;
