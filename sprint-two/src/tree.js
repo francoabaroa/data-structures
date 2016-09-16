@@ -12,27 +12,15 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  var parent = this;
-  var tree = Tree(value);
-
-  if (this.children[0] === undefined) {
-    this.children.push(tree);
-  } else {
-    for (var i = 0; i < this.children.length; i++) {
-      console.log(this.children);
-      this.children.children.push(value); 
-    }
-  }
+  this.children.push(Tree(value));
 };
 
 treeMethods.contains = function(target) {
-  if (this.value === target) {
-    return true;
-  } else {
-    for (var i = 0; i < this.children.length; i++) {
-      if (this.children[i].value === target) {
-        return true;
-      }
+  for (var i = 0; i < this.children.length; i++) {
+    if (this.children[i].value === target) {
+      return true;
+    } else if (this.children[i].contains(target)) {
+      return true;
     }
   }
   return false;
