@@ -16,15 +16,24 @@ treeMethods.addChild = function(value) {
   var tree = Tree(value);
 
   if (this.children[0] === undefined) {
-    this.children[0] = tree;
+    this.children.push(tree);
+  } else {
+    for (var i = 0; i < this.children.length; i++) {
+      console.log(this.children);
+      this.children.children.push(value); 
+    }
   }
-  this.children[0].value = value;
 };
 
 treeMethods.contains = function(target) {
-  console.log(this);
-  if (this.value || this.children[0].value === target) {
+  if (this.value === target) {
     return true;
+  } else {
+    for (var i = 0; i < this.children.length; i++) {
+      if (this.children[i].value === target) {
+        return true;
+      }
+    }
   }
   return false;
 };
