@@ -16,8 +16,8 @@ var LinkedList = function() {
     if (list.head === null) {
       list.head = list.tail = Node(value);
     }
-    while (list.head.next) {
-      list.head = list.head.next;
+    while (!list.head.next) {
+      list.head.next = list.head;
     }
     list.head.next = list.tail = Node(value);
   };
@@ -33,6 +33,10 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
+    // if ( list.head.value === target) {
+    //   return true;
+    // } 
+    return false;
   };
 
   return list;
