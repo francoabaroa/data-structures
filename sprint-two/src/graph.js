@@ -23,7 +23,10 @@ Graph.prototype.contains = function(node) {
 Graph.prototype.removeNode = function(node) {
   if (this.nodes[node] === node) {
     this.nodes[node] = undefined;
-    this.edges[node] = undefined;
+    // this.edges[node] = undefined;
+    for (var key in this.edges) {
+      key = undefined;
+    }
   }
 };
 
