@@ -4,7 +4,6 @@ var BinarySearchTree = function(value) {
   biTree.value = value;
   biTree.left = undefined;
   biTree.right = undefined;
-  
   return biTree;
 };
 
@@ -12,36 +11,21 @@ var biTreeMethods = {};
 
 biTreeMethods.insert = function (value) {
   if (value < this.value) {
-    if (this.left === undefined) {
-      this.left = BinarySearchTree(value);
-    } else {
-      this.left.insert(value);
-    }
+    (this.left === undefined) ? this.left = BinarySearchTree(value) : this.left.insert(value);
   } else {
-    if (this.right === undefined) {
-      this.right = BinarySearchTree(value);
-    } else {
-      this.right.insert(value);
-    }
+    (this.right === undefined) ? this.right = BinarySearchTree(value) : this.right.insert(value);
   }
 };
 
 biTreeMethods.contains = function (value) {
   if (value < this.value) {
-    if (this.left.value === value) {
-      return true;
-    }
-    return false;
+    return (this.left.value === value) ? true : false;
   } else {
-    if (this.right.value === value) {
-      return true;
-    }
-    return false;
+    return (this.right.value === value) ? true : false;
   } 
 };
 
 biTreeMethods.depthFirstLog = function (func) {
-  console.log(this);
   func(this.value);
   if (this.left !== undefined) {
     func(this.left.value);
@@ -49,14 +33,10 @@ biTreeMethods.depthFirstLog = function (func) {
   if (this.left.right !== undefined) {
     func(this.left.right.value);
   }
-  // if (this.value !== undefined) {
-  //   func(this.value);
-  //   if (this.value.left !== undefined) {
-  //     console.log('here');
-  //   }
-  // }
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ The time complexity for insert and contains is O(log n);
+ The time complexity for depthFirstLog is O(n) because it needs to go through each value in the tree but looking at the bigger picture, binary search tree's time complexity is O(log n);
  */
