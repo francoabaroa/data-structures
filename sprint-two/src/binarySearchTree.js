@@ -1,6 +1,7 @@
 var BinarySearchTree = function(value) {
   var biTree = {};
   _.extend(biTree, biTreeMethods);
+  biTree.value = value;
   biTree.left;
   biTree.right;
 
@@ -9,8 +10,11 @@ var BinarySearchTree = function(value) {
 
 var biTreeMethods = {};
 
-biTreeMethods.insert = function () {
-  
+biTreeMethods.insert = function (value) {
+  // this.
+  // if (value > this.value) {
+
+  // }
 };
 
 biTreeMethods.contains = function () {
