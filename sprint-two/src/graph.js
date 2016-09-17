@@ -21,15 +21,18 @@ Graph.prototype.contains = function(node) {
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
+  //Adding a removed variable because removeNode calls on the removeEdge method, which takes two arguments
   var removed;
   if (!this.edges[node]) {
     this.edges[node] = [];
   }
+  //This if/else if control flow statement is used to give the removed variable its value
   if (this.edges[node].indexOf(node) === 0) {
     removed = this.edges[node][1];  
   } else if (this.edges[node].indexOf(node) === 1) {
     removed = this.edges[node][0];
   }
+  //This if statement is used to set the target node = undefined and then call removeEdge method with node & removed
   if (this.nodes[node] === node) {
     this.nodes[node] = undefined;
     this.removeEdge(node, removed);
@@ -38,6 +41,8 @@ Graph.prototype.removeNode = function(node) {
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
+  //The if statement checks if there is a hadEdge array at edges[fromNode] & then checks if that array includes fromNode and toNode
+  //The else if statement checks if there is a hadEdge array at edges[toNode] & then checks if that array includes fromNode and toNode
   if (this.edges[fromNode] !== undefined) {
     return this.edges[fromNode].includes(fromNode) && this.edges[fromNode].includes(toNode);
   } else if (this.edges[toNode] !== undefined) {
@@ -62,7 +67,6 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
   for (var key in this.nodes) {
-    console.log(key);
     cb(this.nodes[key]);
   }
 
