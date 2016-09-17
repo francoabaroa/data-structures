@@ -40,8 +40,21 @@ biTreeMethods.contains = function (value) {
   } 
 };
 
-biTreeMethods.depthFirstLog = function () {
-
+biTreeMethods.depthFirstLog = function (func) {
+  console.log(this);
+  func(this.value);
+  if (this.left !== undefined) {
+    func(this.left.value);
+  }
+  if (this.left.right !== undefined) {
+    func(this.left.right.value);
+  }
+  // if (this.value !== undefined) {
+  //   func(this.value);
+  //   if (this.value.left !== undefined) {
+  //     console.log('here');
+  //   }
+  // }
 };
 
 /*
