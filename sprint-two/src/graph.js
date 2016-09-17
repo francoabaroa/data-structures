@@ -74,6 +74,8 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ The time complexity of the above methods is O(1);
+ forEachNode time complexity is O(n), since it needs to iterate through all the keys of object, but the bigger picture time complexity is O(1);
  */
 
 
