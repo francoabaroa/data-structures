@@ -10,7 +10,7 @@ var BinarySearchTree = function(value) {
 var biTreeMethods = {};
 
 biTreeMethods.insert = function () {
-
+  
 };
 
 biTreeMethods.contains = function () {
