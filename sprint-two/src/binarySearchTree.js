@@ -1,15 +1,15 @@
 var BinarySearchTree = function(value) {
   var biTree = {};
-  _.extend(biTree, biTreeMethods);
+  _.extend(biTree, binaryTreeMethods);
   biTree.value = value;
   biTree.left = undefined;
   biTree.right = undefined;
   return biTree;
 };
 
-var biTreeMethods = {};
+var binaryTreeMethods = {};
 
-biTreeMethods.insert = function (value) {
+binaryTreeMethods.insert = function (value) {
   if (value < this.value) {
     (this.left === undefined) ? this.left = BinarySearchTree(value) : this.left.insert(value);
   } else {
@@ -17,7 +17,7 @@ biTreeMethods.insert = function (value) {
   }
 };
 
-biTreeMethods.contains = function (value) {
+binaryTreeMethods.contains = function (value) {
   if (value < this.value) {
     return (this.left.value === value) ? true : false;
   } else {
@@ -25,7 +25,7 @@ biTreeMethods.contains = function (value) {
   } 
 };
 
-biTreeMethods.depthFirstLog = function (func) {
+binaryTreeMethods.depthFirstLog = function (func) {
   func(this.value);
   if (this.left !== undefined) {
     func(this.left.value);
