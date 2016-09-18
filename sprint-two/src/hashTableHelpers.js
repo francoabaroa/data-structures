@@ -56,4 +56,5 @@ var getIndexBelowMaxForKey = function(str, max) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ The time complexity for the above functions is O(1), since we have references to the index and we always perform the same number of operations
  */
