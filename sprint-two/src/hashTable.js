@@ -35,13 +35,13 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  this._storage.set(index, undefined);
-
+  this._storage.set(index, []);
 };
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ My guess is that, the time complexity for the above functions is O(n), since we need to iterate through the buckets
  */
 
 
