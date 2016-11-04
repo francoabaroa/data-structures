@@ -27,30 +27,16 @@ treeMethods.contains = function(target) {
     }
 
     for (var i = 0; i < tree.children.length; i++) {
-      console.log(tree.children[i].value);
-      debugger;
      if (tree.children[i].value === target) {
         contains = true;
-        console.log('in hurr');
       } else {
         recurse(tree.children[i]);
       }
-      console.log(tree.children[i], 'here');
     }
   }
   recurse(this);
   return contains;
 };
-
-var tree = Tree(4);
-tree.addChild(5);
-tree.addChild(6);
-tree.children[0].addChild(7);
-tree.children[1].addChild(8);
-console.log(tree.contains(5));
-// console.log(tree);
-
-
 
 /*
  * Complexity: What is the time complexity of the above functions?

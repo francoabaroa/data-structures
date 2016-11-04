@@ -1,5 +1,4 @@
 
-
 var HashTable = function() {
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
@@ -15,7 +14,6 @@ HashTable.prototype.insert = function(k, v) {
       bucket = [];
     }
   }
-
   bucket.push([k, v]);
   this._storage.set(index, bucket);
 };
@@ -41,7 +39,7 @@ HashTable.prototype.remove = function(k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
- My guess is that, the time complexity for the above functions is O(n), since we need to iterate through the buckets
+The time complexity is O(1), because we always have a reference to the thing that is stored via the key so its always the same amount of steps for the operations. Worst case time complexity could be O(n)
  */
 
 

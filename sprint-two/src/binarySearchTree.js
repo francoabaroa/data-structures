@@ -22,7 +22,7 @@ binaryTreeMethods.contains = function (value) {
     return (this.left.value === value) ? true : false;
   } else {
     return (this.right.value === value) ? true : false;
-  } 
+  }
 };
 
 binaryTreeMethods.depthFirstLog = function (func) {
